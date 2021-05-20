@@ -1,0 +1,14 @@
+<p>card-list works!</p>
+<div class="button btn-default" (click)></div>
+<div class="row">
+  <table>
+    <thead>
+      <th>Cards</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cards">
+        <td (click)="onSelected(c)"><a href=# >{{ c.name }}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

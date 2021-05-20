@@ -1,0 +1,13 @@
+<p>cards works!</p>
+<div class="row">
+  <div class="col-sm-4">
+    <app-card-list></app-card-list>
+  </div>
+  <div class="col-sm-8">
+    <app-card-detail *ngIf="selectedCard; else infoText"
+    [card]="selectedCard"></app-card-detail>
+    <ng-template #infoText>
+      <p>Select a card...</p>
+    </ng-template>
+  </div>
+</div>
