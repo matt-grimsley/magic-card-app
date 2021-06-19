@@ -1,14 +1,21 @@
-<p>card-list works!</p>
-<div class="button btn-default" (click)></div>
 <div class="row">
-  <table>
-    <thead>
-      <th>Cards</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of cards">
-        <td (click)="onSelected(c)"><a href=# >{{ c.name }}</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- <div class="col-xs-12 scroller-list" style="max-height: 300px; overflow-y:auto">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let c of cards">
+                <a (click)="onSelected(c)">{{ c.name }}</a>
+            </li>
+        </ul>
+    </div> -->
+    <table class="table table-hover table-condensed">
+        <thead>
+            <th>Cards</th>
+        </thead>
+        <tbody>
+            <tr style="cursor: pointer;"*ngFor="let c of cards">
+                <td (click)="onSelected(c)">
+                    {{c.name}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
