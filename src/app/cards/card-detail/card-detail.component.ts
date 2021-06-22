@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Card } from 'src/app/shared/card.model';
 import { CardService } from 'src/app/shared/card.service';
 import { CardResponse } from '../../shared/card-response.model';
 
@@ -9,7 +10,7 @@ import { CardResponse } from '../../shared/card-response.model';
 })
 
 export class CardDetailComponent implements OnInit {
-  @Input() card: CardResponse;
+  @Input() card: Card;
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {}

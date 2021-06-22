@@ -1,3 +1,3 @@
 export class Card {
-  constructor(name: string, imagePath: string){}
+  constructor(public name: string, public imagePath: string){}
 }
