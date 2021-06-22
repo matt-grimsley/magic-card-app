@@ -14,7 +14,10 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {}
 
     onSearch(searchValue: string) {
+      debugger;
         console.log("Searching for '" + searchValue + "'");
+        debugger;
         this.dataService.fuzzySearch(searchValue);
+        debugger;
     }
 }

@@ -11,8 +11,10 @@ export class DataService {
 
     fuzzySearch(searchValue: string) {
       console.log('GET https://api.scryfall.com/cards/named?fuzzy=' + searchValue)
-        this.http.get('https://api.scryfall.com/cards/named?fuzzy=' + searchValue).subscribe(data => {this.searchResultData = data})
-        debugger
-        console.log('Result' + this.searchResultData)
+        this.http.get('https://api.scryfall.com/cards/named?fuzzy=' + searchValue).subscribe(data => {
+          console.log(data['name'])
+          console.log(['img_uris'])
+        this.searchResultData = data})
+        console.log('Result: ' + this.searchResultData)
     }
 }
