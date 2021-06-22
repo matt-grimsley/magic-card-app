@@ -4,7 +4,7 @@ import { Card } from "./card.model";
 @Injectable({providedIn: 'root'})
 export class CardService{
   private cards: Card[] = [
-  
+
   ]
 
   getCards(){

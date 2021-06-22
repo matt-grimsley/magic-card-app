@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../shared/data.service';
@@ -14,10 +15,9 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {}
 
     onSearch(searchValue: string) {
-      debugger;
-        console.log("Searching for '" + searchValue + "'");
-        debugger;
-        this.dataService.fuzzySearch(searchValue);
-        debugger;
+
+      var str = searchValue.split(' ').join('%20')
+        console.log("Searching for '" + str + "'");
+        this.dataService.fuzzySearch(str);
     }
 }

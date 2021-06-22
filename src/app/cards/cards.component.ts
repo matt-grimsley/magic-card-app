@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../shared/card.model';
+import { CardResponse } from '../shared/card-response.model';
 import { CardService } from '../shared/card.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { CardService } from '../shared/card.service';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  selectedCard: Card;
+  selectedCard: CardResponse;
 
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
     this.cardService.cardSelected.subscribe(
-      (card: Card) => {
+      (card: CardResponse) => {
         this.selectedCard = card;
       }
     )
