@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './auth/signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http'
     HeaderComponent,
     HomeComponent,
     AuthComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,26 @@
-import { NgModule } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-import { AuthComponent } from "./auth/auth.component";
-import { HomeComponent } from "./home/home.component";
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { HomeComponent } from './home/home.component';
 
-const appRoutes: Routes= [
-{ path: '', redirectTo: '/home', pathMatch: 'full'},
-{ path: 'home', component: HomeComponent},
-{ path: 'auth', component: AuthComponent}
+const appRoutes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    {
+        path: 'auth',
+        component: AuthComponent,
+        children: [
+            {
+                path: 'signup',
+                component: SignupComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })],
+    exports: [RouterModule]
 })
-
-export class AppRoutingModule{}
+export class AppRoutingModule {}
