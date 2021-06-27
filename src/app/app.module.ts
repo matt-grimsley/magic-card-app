@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './auth/signup/signup.component'
+import { SignupComponent } from './auth/signup/signup.component';
+import { ArtViewComponent } from './art-view/art-view.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SignupComponent } from './auth/signup/signup.component'
     HomeComponent,
     AuthComponent,
     SignupComponent,
+    ArtViewComponent,
   ],
   imports: [
     BrowserModule,

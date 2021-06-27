@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {}
 
     onSearch(searchValue: string) {
-
-      var str = searchValue.split(' ').join('%20')
-        console.log("Searching for '" + str + "'");
-        this.dataService.fuzzySearch(str);
+        this.dataService.fuzzySearch(searchValue);
     }
 }
