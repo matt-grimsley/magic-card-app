@@ -1,12 +1,52 @@
 <div class="container-fluid">
-  <form class="navbar-form pull-left" role="search">
-    <div class="input-group">
-      <input type="text" class="form-control" [(ngModel)]='searchValue'name="searchValue" placeholder="Search for a card..." />
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default" (click)="onSearch(searchValue)">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </div>
+    <div class="row">
+        <div class="">
+            <form class="navbar-form pull-left" role="search">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="searchValue"
+                        name="searchValue"
+                        placeholder="Search for a card..."
+                    />
+                    <div class="input-group-btn">
+                        <button
+                            type="button"
+                            class="btn btn-default"
+                            (click)="onSearch(searchValue)"
+                        >
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </form>
+    <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">{{cardName}}</div>
+          </div>
+          <div class="panel-body">
+            <div class="list-group">
+              <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let card of cardArt">
+                      {{ card.artist }} - <cite>{{ card.set }}</cite> ({{
+                          card.released_at
+                      }})
+                  </li>
+              </ul>
+          </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="img-responsive">
+        <img
+            *ngFor="let card of cardArt"
+            [src]="card.imagePath"
+            alt="{{ card.name }} - {{ card.artist }} - {{ card.set }}"
+        />
+    </div>
 </div>

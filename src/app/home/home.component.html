@@ -1,9 +1,15 @@
 <div class="container">
   <div class="jumbotron">
-    <div class="text-center">
-      <h1>MtG Card App</h1>
-      <p>This is the HomeComponent</p>
-    </div>
+      <form class="navbar-form pull-left" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]='searchValue' name="searchValue" placeholder="Search for a card..." />
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default" (click)="onSearch(searchValue)">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </div>
+    </form>
   </div>
   <div class="well">
     <app-cards></app-cards>

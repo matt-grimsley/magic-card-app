@@ -3,16 +3,7 @@
         <div class="navbar-header">
             <a href="" style="cursor: pointer" class="navbar-brand">Magic Card App</a>
         </div>
-        <form class="navbar-form pull-left" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" [(ngModel)]='searchValue' name="searchValue" placeholder="Search for a card..." />
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default" (click)="onSearch(searchValue)">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </div>
-            </div>
-        </form>
+        
         <div class="collapse navbar-collapse"></div>
         <ul class="nav navbar-nav">
             <li routerLinkActive="active">

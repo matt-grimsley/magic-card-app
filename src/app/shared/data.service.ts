@@ -42,26 +42,29 @@ export class DataService {
     uniqueArtSearch(searchValue: string) {
         let s = encodeURI(searchValue);
         console.log(
-            `GET https://api.scryfall.com/cards/search?unique=art&q=${s}`
+            `GET https://api.scryfall.com/cards/search?order=released&dir=asc&unique=art&q=${s}`
         );
         this.http
-            .get(`https://api.scryfall.com/cards/search?unique=art&q=${s}`)
+            .get(`https://api.scryfall.com/cards/search?order=released&dir=asc&unique=art&q=${s}`)
             .subscribe((response) => {
                 this.cardArt = [];
-                let artSearchResponse = response['data']
-                console.log(artSearchResponse)
+                let artSearchResponse = response['data'];
+
                 for (let card of artSearchResponse) {
-                  let url = card['image_uris']['art_crop']
-                  console.log('url:' + url)
-                                      this.cardArt.push(
+                    let url = card['image_uris']['art_crop'];
+                    this.cardArt.push(
                         new CardArt(
                             card['name'],
                             card['set_name'],
                             card['artist'],
-                            card['image_uris']['art_crop']
+                            card['image_uris']['art_crop'],
+                            card['released_at']
                         )
                     );
                 }
+                this.cardService.cardArtResult.next(this.cardArt.slice());
             });
+
+
     }
 }

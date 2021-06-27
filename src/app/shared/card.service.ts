@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
+import { CardArt } from './card-art.model';
 import { Card } from './card.model';
 
 export const CardBack = new Card(
@@ -22,4 +23,7 @@ export class CardService {
     }
 
     cardSelected = new EventEmitter<Card>();
+
+    cardArtResult = new EventEmitter<CardArt[]>();
+
 }
