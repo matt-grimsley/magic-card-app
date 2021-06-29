@@ -12,8 +12,7 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './auth/signup/signup.component';
-import { ArtViewComponent } from './art-view/art-view.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { ArtViewComponent } from './art-view/art-view.component'
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    NgbModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
