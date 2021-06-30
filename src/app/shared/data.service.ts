@@ -54,6 +54,7 @@ export class DataService {
                     this.cardArt.push(
                         new CardArt(
                             card['name'],
+                            card['id'],
                             card['set_name'],
                             card['artist'],
                             card['image_uris']['art_crop'],

@@ -1,6 +1,7 @@
 export class CardArt {
     constructor(
         public name: string,
+        public scryfallId: string,
         public set: string,
         public artist: string,
         public imagePath: string,
