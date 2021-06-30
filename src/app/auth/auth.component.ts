@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SignupComponent } from './signup/signup.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 })
 export class AuthComponent implements OnInit {
   form: FormGroup
-    constructor() {}
+    constructor(private modalService: NgbModal) {}
 
     ngOnInit(): void {
       this.form = new FormGroup({
@@ -20,5 +21,15 @@ export class AuthComponent implements OnInit {
 
     onSubmit(){
       console.log(this.form.value)
+    }
+
+    openFormModal() {
+      const modalRef = this.modalService.open(SignupComponent);
+
+      modalRef.result.then((result) => {
+        console.log(result);
+      }).catch((error)=> {
+        console.log(error);
+      });
     }
 }

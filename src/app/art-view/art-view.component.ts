@@ -14,6 +14,8 @@ export class ArtViewComponent implements OnInit, OnDestroy {
     cardName: string;
     cardArt: CardArt[];
     cardArtSub: Subscription;
+    isLoading = false;
+
     constructor(
         private dataService: DataService,
         private cardService: CardService
@@ -21,18 +23,24 @@ export class ArtViewComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.cardService.cardArtResult.subscribe((data) => {
+          this.isLoading = false;
             this.cardArt = data;
-            this.cardName = this.cardArt[0].name
+            this.cardName = this.cardArt[0].name;
         });
     }
 
     onSearch(searchValue: string) {
-        var str = searchValue.split(' ').join('%20');
-        console.log(str);
-        this.dataService.uniqueArtSearch(searchValue);
+        if (searchValue) {
+          this.isLoading = true;
+          this.cardArt = []
+            console.log(searchValue);
+            this.dataService.uniqueArtSearch(searchValue);
+        }
     }
 
     ngOnDestroy(): void {
-        this.cardArtSub.unsubscribe();
+        if (this.cardArtSub) {
+            this.cardArtSub.unsubscribe();
+        }
     }
 }

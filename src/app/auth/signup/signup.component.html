@@ -1,16 +1,14 @@
-<div class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close" (click)="closeModal($event)">&times;</span>
-      <h2>
-        <ng-content select="[modal-header]"></ng-content>
-      </h2>
-    </div>
-    <div class="modal-body">
-      <ng-content select="[modal-body]"></ng-content>
-    </div>
-    <div class="modal-footer">
-      <ng-content select="[modal-footer]"></ng-content>
-    </div>
-  </div>
+<div class="modal-header">
+  <h4 class="modal-title">Modal Title</h4>
+  <button type="button" class="close" aria-label="Close"
+   (click)="activeModal.dismiss('Cross click')">
+  </button>
+</div>
+<div class="modal-body">
+  <p>My modal content</p>
+</div>
+<div class="modal-footer">
+  <button (click)="activeModal.dismiss('Close clicked')">
+    Close Clicked
+  </button>
 </div>

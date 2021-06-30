@@ -51,7 +51,6 @@ export class DataService {
                 let artSearchResponse = response['data'];
 
                 for (let card of artSearchResponse) {
-                    let url = card['image_uris']['art_crop'];
                     this.cardArt.push(
                         new CardArt(
                             card['name'],

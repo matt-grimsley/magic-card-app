@@ -3,7 +3,12 @@
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" formControlName="username" class="form-control" />
+                <input
+                    type="text"
+                    id="username"
+                    formControlName="username"
+                    class="form-control"
+                />
                 <label for="password">Password:</label>
                 <input
                     type="password"
@@ -13,9 +18,12 @@
                 />
             </div>
             <button class="btn btn-primary" type="submit">Login</button>
-            <span> Not a user? </span>
-            <app-signup></app-signup>
+            <span class="offset-1">
+                Not a user?
+                <a class="navbar-link context-menu" (click)="openFormModal()"
+                    >Register</a
+                ></span
+            >
         </form>
-        <router-outlet name="modal"></router-outlet>
     </div>
 </div>

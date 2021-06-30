@@ -12,7 +12,9 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './auth/signup/signup.component';
-import { ArtViewComponent } from './art-view/art-view.component'
+import { ArtViewComponent } from './art-view/art-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { ArtViewComponent } from './art-view/art-view.component'
     AuthComponent,
     SignupComponent,
     ArtViewComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

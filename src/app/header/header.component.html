@@ -1,9 +1,9 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="" style="cursor: pointer" class="navbar-brand">Magic Card App</a>
         </div>
-        
+
         <div class="collapse navbar-collapse"></div>
         <ul class="nav navbar-nav">
             <li routerLinkActive="active">
@@ -16,4 +16,31 @@
           </li>
         </ul>
     </div>
+</nav> -->
+
+<!-- <nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <a href="" style="cursor: pointer" class="navbar-brand">Magic Card App</a>
+</div>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink routerLink="/auth">Log In</a>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink routerLink="/art-view">View Card Art</a>
+  </li>
+</ul>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/home">Magic Card App</a>
+  <div class="collapse navbar-collapse" id ="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/auth">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/art-view">View Card Art</a>
+      </li>
+    </ul>
+  </div>
 </nav>
