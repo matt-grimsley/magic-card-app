@@ -3,57 +3,26 @@
         <app-loading-spinner></app-loading-spinner>
     </div>
     <div class="row" *ngIf="!isLoading">
-        <div class="">
-            <form class="navbar-form pull-left" role="search">
-                <div class="input-group">
-                    <input
-                        type="text"
-                        class="form-control"
-                        [(ngModel)]="searchValue"
-                        name="searchValue"
-                        placeholder="Search for a card..."
-                    />
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        (click)="onSearch(searchValue)"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-search"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                            />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
+        <form class="navbar-form pull-left" role="search">
+            <div class="input-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="searchValue"
+                    name="searchValue"
+                    placeholder="Search for a card..."
+                />
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="onSearch(searchValue)"
+                >
+                <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
     </div>
     <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title"></div>
-            </div>
-            <div class="panel-body">
-                <div class="">
-                    <ul class="list-group scroll">
-                        <a
-                            class="list-group-item list-group-item-action"
-                            *ngFor="let card of cardArt"
-                            (click)="slideSelected(card.scryfallId)"
-                            ><h6>{{ card.name }}</h6>{{ card.artist }} -
-                            <cite>{{ card.set }}</cite> ({{ card.released_at }})
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <ngb-carousel>
             <ng-template ngbSlide *ngFor="let card of cardArt" [id]="card.scryfallId">
                 <div class="picsum-img-wrapper">
@@ -72,5 +41,22 @@
                 </div>
             </ng-template>
         </ngb-carousel>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="">
+                    <ul class="list-group scroll">
+                        <a
+                            class="list-group-item list-group-item-action"
+                            *ngFor="let card of cardArt"
+                            (click)="slideSelected(card.scryfallId)"
+                            ><h6>{{ card.name }}</h6>
+                            {{ card.artist }} - <cite>{{ card.set }}</cite> ({{
+                                card.released_at
+                            }})
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
