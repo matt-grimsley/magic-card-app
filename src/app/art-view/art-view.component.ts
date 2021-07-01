@@ -21,6 +21,7 @@ export class ArtViewComponent implements OnInit, OnDestroy {
 
     constructor(private dataService: DataService, private cardService: CardService, config: NgbCarouselConfig) {
       config.interval = 0;
+      config.showNavigationIndicators = false;
     }
 
     ngOnInit(): void {

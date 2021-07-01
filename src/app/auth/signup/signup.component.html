@@ -1,14 +1,54 @@
 <div class="modal-header">
-  <h4 class="modal-title">Modal Title</h4>
-  <button type="button" class="close" aria-label="Close"
-   (click)="activeModal.dismiss('Cross click')">
-  </button>
+    <h4 class="modal-title">Sign Up!</h4>
 </div>
-<div class="modal-body">
-  <p>My modal content</p>
-</div>
-<div class="modal-footer">
-  <button (click)="activeModal.dismiss('Close clicked')">
-    Close Clicked
-  </button>
-</div>
+<form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+    <div class="modal-body">
+        <div class="container">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    formControlName="email"
+                    email
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    formControlName="password"
+                    minlength="8"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    class="form-control"
+                    formControlName="confirmPassword"
+                    minlength="8"
+                    required
+                />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-outline-danger" (click)="activeModal.dismiss()">
+            Cancel
+        </button>
+        <button
+            type="submit"
+            class="btn btn-outline-success"
+            [disabled]="!signupForm.valid"
+        >
+            Submit
+        </button>
+    </div>
+</form>
