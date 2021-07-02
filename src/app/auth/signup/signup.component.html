@@ -1,6 +1,9 @@
 <div class="modal-header">
     <h4 class="modal-title">Sign Up!</h4>
 </div>
+<div class="alert">
+  
+</div>
 <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
     <div class="modal-body">
         <div class="container">
@@ -11,8 +14,6 @@
                     id="email"
                     class="form-control"
                     formControlName="email"
-                    email
-                    required
                 />
             </div>
             <div class="form-group">
@@ -22,8 +23,6 @@
                     id="password"
                     class="form-control"
                     formControlName="password"
-                    minlength="8"
-                    required
                 />
             </div>
             <div class="form-group">
@@ -33,8 +32,6 @@
                     id="confirmPassword"
                     class="form-control"
                     formControlName="confirmPassword"
-                    minlength="8"
-                    required
                 />
             </div>
         </div>
