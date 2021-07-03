@@ -1,18 +1,33 @@
-.list-group{
-  max-height: 600px;
-  margin-bottom: 10px;
-  overflow-y:auto;
-  -webkit-overflow-scrolling: touch;
+.list-group {
+    max-height: 600px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.list-group-item{
-  cursor: pointer;
+.list-group-item {
+    cursor: pointer;
+    color: #f6fff8;
+    background-color: rgb(106, 106, 106);
 }
 
-.carousel-img{
-  /* max-height: 300px; */
-  max-width: 300px;
-  height: auto;
+.carousel-img {
+    /* max-height: 300px; */
+    max-width: 700px;
+    height: auto;
+    outline: 10px 5px 5px #1b75be;
 }
 
+.form-control {
+    color: #f6fff8;
+    background-color: rgb(106, 106, 106);
+}
 
+.input {
+    color: #1b263b;
+}
+
+::placeholder {
+    color: #e0e1dd;
+    opacity: 1;
+}

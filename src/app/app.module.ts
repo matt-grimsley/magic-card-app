@@ -15,6 +15,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ArtViewComponent } from './art-view/art-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     SignupComponent,
     ArtViewComponent,
     LoadingSpinnerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
