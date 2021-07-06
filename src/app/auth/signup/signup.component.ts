@@ -10,6 +10,7 @@ import { MustMatch } from './must-match.validator';
 })
 export class SignupComponent implements OnInit {
     signupForm: FormGroup;
+    hasErrors: false;
     constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) {
         this.createForm();
     }

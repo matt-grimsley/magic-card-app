@@ -1,8 +1,7 @@
 <div class="modal-header">
     <h4 class="modal-title">Sign Up!</h4>
 </div>
-<div class="alert">
-  
+<div class="alert" *ngIf="hasErrors">
 </div>
 <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
     <div class="modal-body">
@@ -37,12 +36,12 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-outline-danger" (click)="activeModal.dismiss()">
+        <button class="btn btn-danger" (click)="activeModal.dismiss()">
             Cancel
         </button>
         <button
             type="submit"
-            class="btn btn-outline-success"
+            class="btn btn-success"
             [disabled]="!signupForm.valid"
         >
             Submit

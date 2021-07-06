@@ -4,7 +4,8 @@
  .carousel-control-next-icon{
     background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')!important;
  } */
-.page-wrapper {
+
+/* .page-wrapper {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -29,6 +30,10 @@
     flex-grow: 1;
 }
 .footer {
-  flex: 0 0 50px;/*or just height:50px;*/
+  flex: 0 0 50px;
   margin-top: auto;
+} */
+
+.page-wrapper {
+    background-color: var(--dark-3);
 }

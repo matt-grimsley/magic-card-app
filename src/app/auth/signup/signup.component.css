@@ -1,0 +1,14 @@
+.modal-header {
+    background-color: var(--dark-1);
+    color: var(--light-1);
+}
+
+.modal-body {
+    background-color: var(--dark-3);
+    color: var(--light-1);
+}
+
+.modal-footer {
+    background-color: var(--dark-1);
+    color: var(--light-1);
+}
