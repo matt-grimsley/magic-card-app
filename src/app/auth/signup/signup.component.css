@@ -12,3 +12,10 @@
     background-color: var(--dark-1);
     color: var(--light-1);
 }
+
+.alert {
+  background-color: var(--light-3);
+  color: var(--dark-1);
+  border: var(--light-1);
+}
+

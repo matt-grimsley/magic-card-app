@@ -4,6 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { User } from './user.model';
 import { FIREBASE_API_KEY } from '../shared/data.service';
+import { Injectable } from '@angular/core';
 
 export interface AuthResponseData {
     idToken: string;
@@ -13,7 +14,7 @@ export interface AuthResponseData {
     localId: string;
     registered?: boolean;
 }
-
+@Injectable()
 export class AuthService {
     userSubject = new BehaviorSubject<User>(null);
     tokenExpirationTimer: any;
@@ -115,7 +116,7 @@ export class AuthService {
         this.autoLogout(expiresIn * 1000);
         localStorage.setItem('userData', JSON.stringify(user));
     }
-    
+
     private handleError(errorResponse: HttpErrorResponse) {
         let errorMessage = 'Unknown Error';
 

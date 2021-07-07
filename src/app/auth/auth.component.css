@@ -14,3 +14,8 @@
 .navbar-link {
     color: var(--light-4);
 }
+
+.form-control {
+    color: var(--dark-1);
+    background-color: var(--light-1);
+}

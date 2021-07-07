@@ -16,30 +16,31 @@ import { ArtViewComponent } from './art-view/art-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CardDetailComponent,
-    CardsComponent,
-    CardListComponent,
-    HeaderComponent,
-    HomeComponent,
-    AuthComponent,
-    SignupComponent,
-    ArtViewComponent,
-    LoadingSpinnerComponent,
-    FooterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgbModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CardDetailComponent,
+        CardsComponent,
+        CardListComponent,
+        HeaderComponent,
+        HomeComponent,
+        AuthComponent,
+        SignupComponent,
+        ArtViewComponent,
+        LoadingSpinnerComponent,
+        FooterComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgbModule
+    ],
+    providers: [AuthService],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
