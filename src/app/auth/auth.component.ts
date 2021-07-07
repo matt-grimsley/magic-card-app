@@ -21,7 +21,7 @@ export class AuthComponent implements OnInit {
 
     ngOnInit(): void {
         this.form = new FormGroup({
-            username: new FormControl(null, []),
+            email: new FormControl(null, []),
             password: new FormControl(null, [])
         });
     }
@@ -30,7 +30,6 @@ export class AuthComponent implements OnInit {
         if (!this.form.valid) {
             return;
         }
-
         const email = this.form.value.email;
         const password = this.form.value.password;
 

@@ -10,8 +10,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #1b75be;
-  border-color: #1b75be transparent #1b75be transparent;
+  border: 6px solid var(--light-5);
+  border-color: var(--light-3) transparent var(--light-3) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -21,4 +21,7 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.d-block {
+  color: var(--light-3);
 }
