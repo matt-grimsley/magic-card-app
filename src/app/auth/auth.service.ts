@@ -5,6 +5,7 @@ import { BehaviorSubject, throwError } from 'rxjs';
 import { User } from './user.model';
 import { FIREBASE_API_KEY } from '../shared/data.service';
 import { Injectable } from '@angular/core';
+import Swal from 'sweetalert2';
 
 export interface AuthResponseData {
     idToken: string;
@@ -109,16 +110,24 @@ export class AuthService {
         }, expirationDuration);
     }
 
-    private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
+    private handleAuthentication(
+        email: string,
+        userId: string,
+        token: string,
+        expiresIn: number
+    ) {
         const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
         const user = new User(email, userId, token, expirationDate);
         this.userSubject.next(user);
         this.autoLogout(expiresIn * 1000);
         localStorage.setItem('userData', JSON.stringify(user));
+        Swal.fire('Welcome back, ' + email + '!');
+        this.router.navigate(['/home']);
     }
 
     private handleError(errorResponse: HttpErrorResponse) {
         let errorMessage = 'Unknown Error';
+        debugger;
 
         if (!errorResponse.error || !errorResponse.error.error) {
             return throwError(errorMessage);
@@ -133,7 +142,10 @@ export class AuthService {
             case 'INVALID_PASSWORD':
                 errorMessage = 'Password invalid.';
                 break;
+            case 'MISSING_PASSWORD':
+                errorMessage = 'Missing password.';
         }
+        Swal.fire('Oops...', errorMessage, 'error');
         return throwError(errorMessage);
     }
 }

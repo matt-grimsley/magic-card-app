@@ -5,7 +5,7 @@
     background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')!important;
  } */
 
-/* .page-wrapper {
+/* .content-outer-container {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -20,7 +20,7 @@
 
 }
 
-.content-wrapper {
+.content-inner-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -34,6 +34,6 @@
   margin-top: auto;
 } */
 
-.page-wrapper {
+.content-outer-container {
     background-color: var(--dark-3);
 }

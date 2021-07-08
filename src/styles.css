@@ -11,3 +11,33 @@
     --light-2: #cce4fd;
     --light-1: #e8f3fe;
 }
+
+/* global styling for sticky footer*/
+html,
+body,
+app-root {
+    height: 100%;
+}
+body {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.content-outer-container {
+    min-height: 100%;
+}
+
+.content-inner-container {
+    padding-bottom: 36px;
+}
+
+.footer-container {
+    height: 24px;
+    margin-top: -36px;
+}
+
+.footer-content {
+    margin: 0 auto;
+    text-align: center;
+    font-size: x-small;
+}
