@@ -13,8 +13,7 @@ import { User } from '../auth/user.model';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-    isAuthenticated = false;
-    currentUser: User;
+    private currentUser = null;
     private userSub: Subscription;
     isMenuCollapsed = true;
     searchValue: string;
@@ -22,11 +21,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.userSub = this.authService.userSubject.subscribe((user) => {
-            this.isAuthenticated = !user ? false : true;
             if(user){
               this.currentUser = user;
             }
         });
+    }
+
+    public get user() {
+      return this.currentUser;
     }
 
     onSearch(searchValue: string) {
@@ -39,6 +41,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     logout() {
       this.authService.logout();
-      this.isAuthenticated = false;
+      this.currentUser = null;
     }
 }

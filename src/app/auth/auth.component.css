@@ -7,8 +7,16 @@
     cursor: context-menu;
 }
 
-.row {
+.component-wrapper {
     color: var(--light-1);
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 20%;
+    justify-content: space-around;
+}
+
+.form-group {
+  min-width: 50vw;
 }
 
 .navbar-link {

@@ -29,3 +29,9 @@
 .italic {
   font-style: italic;
 }
+
+.dropdown-toggle {
+  background-color: var(--dark-1);
+  color: var(--light-3);
+  box-shadow: none;
+}

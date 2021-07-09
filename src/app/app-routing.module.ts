@@ -10,12 +10,6 @@ import { InventoryComponent } from './inventory/inventory.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     {
-        path: 'home',
-        canActivate: [AuthGuard],
-        component: HomeComponent,
-        children: [{ path: 'inventory', component: InventoryComponent }]
-    },
-    {
         path: 'auth',
         component: AuthComponent,
         children: [
@@ -25,7 +19,13 @@ const appRoutes: Routes = [
             }
         ]
     },
-    { path: 'art-view', component: ArtViewComponent }
+    {
+        path: 'home',
+        canActivate: [AuthGuard],
+        component: HomeComponent,
+        children: [{ path: 'inventory', component: InventoryComponent }]
+    },
+    { path: 'art-view', canActivate: [AuthGuard], component: ArtViewComponent }
 ];
 
 @NgModule({
