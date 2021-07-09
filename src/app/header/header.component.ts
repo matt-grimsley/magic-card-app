@@ -15,7 +15,7 @@ import { User } from '../auth/user.model';
 export class HeaderComponent implements OnInit, OnDestroy {
     private currentUser = null;
     private userSub: Subscription;
-    isMenuCollapsed = true;
+    collapsed = true;
     searchValue: string;
     constructor(private dataService: DataService, private authService: AuthService) {}
 
