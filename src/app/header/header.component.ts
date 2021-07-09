@@ -5,6 +5,7 @@ import { DataService } from '../shared/data.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { User } from '../auth/user.model';
 
 @Component({
     selector: 'app-header',
@@ -13,7 +14,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     isAuthenticated = false;
-    currentUser: string;
+    currentUser: User;
     private userSub: Subscription;
     isMenuCollapsed = true;
     searchValue: string;
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.userSub = this.authService.userSubject.subscribe((user) => {
             this.isAuthenticated = !user ? false : true;
             if(user){
-              this.currentUser = user.username;
+              this.currentUser = user;
             }
         });
     }

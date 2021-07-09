@@ -45,8 +45,8 @@
             </div>
         </div>
     </div>
-        <div class="col-lg-8">
-            <ngb-carousel class="carousel-img" *ngIf="cardArt">
+        <div class="col-lg-8" *ngIf="!isLoading && cardArt">
+            <ngb-carousel class="carousel-img">
                 <ng-template ngbSlide *ngFor="let card of cardArt" [id]="card.scryfallId">
                     <div class="picsum-img-wrapper">
                         <div class="d-flex justify-content-center">

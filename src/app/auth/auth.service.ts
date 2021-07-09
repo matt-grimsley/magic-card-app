@@ -69,7 +69,7 @@ export class AuthService {
     }
     autoLogin() {
         const userData: {
-            email: string;
+            username: string;
             id: string;
             _token: string;
             _tokenExpirationDate: string;
@@ -79,7 +79,7 @@ export class AuthService {
         }
 
         const loadedUser = new User(
-            userData.email,
+            userData.username,
             userData.id,
             userData._token,
             new Date(userData._tokenExpirationDate)
@@ -121,7 +121,13 @@ export class AuthService {
         this.userSubject.next(user);
         this.autoLogout(expiresIn * 1000);
         localStorage.setItem('userData', JSON.stringify(user));
-        Swal.fire('Welcome back, ' + email + '!');
+        Swal.fire({
+          text: 'Welcome back, ' + email + '!',
+          buttonsStyling: false,
+          customClass: {
+            confirmButton: 'btn btn-success btn-lg'
+          }
+        });
         this.router.navigate(['/home']);
     }
 
@@ -145,7 +151,15 @@ export class AuthService {
             case 'MISSING_PASSWORD':
                 errorMessage = 'Missing password.';
         }
-        Swal.fire('Oops...', errorMessage, 'error');
+        Swal.fire({
+          title: 'Oops...',
+          text: errorMessage,
+          icon: 'error',
+          buttonsStyling: false,
+          customClass: {
+            confirmButton: 'btn btn-danger btn-lg'
+          }
+        });
         return throwError(errorMessage);
     }
 }

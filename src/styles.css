@@ -24,7 +24,7 @@ body {
 }
 
 .content-outer-container {
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .content-inner-container {

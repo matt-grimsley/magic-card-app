@@ -33,6 +33,7 @@ export class ArtViewComponent implements OnInit, OnDestroy {
     }
 
     onSearch(searchValue: string) {
+      this.cardArt = []
         if (searchValue) {
             this.isLoading = true;
             this.cardArt = [];

@@ -46,6 +46,7 @@ export class AuthComponent implements OnInit {
                 console.log(errorRes);
                 this.hasError = true;
                 this.error = errorRes;
+                this.form.controls['password'].reset();
             }
         );
     }

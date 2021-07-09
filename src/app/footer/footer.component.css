@@ -4,3 +4,9 @@
 
     letter-spacing: 1px;
 }
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

@@ -25,3 +25,7 @@
 .navbar-toggler {
     color: var(--light-1);
 }
+
+.italic {
+  font-style: italic;
+}

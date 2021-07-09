@@ -51,7 +51,16 @@ export class SignupComponent implements OnInit {
             (response) => {
                 console.log(response);
                 console.log('signup success!');
-                Swal.fire('Signup success!', 'Congratulations! You can now use the app as a registered member.', 'success');
+                // Swal.fire('Signup success!', 'Congratulations! You can now use the app as a registered member.', 'success');
+                Swal.fire({
+                    title: 'Signup success!',
+                    text: 'Congratulations! You can now use the app as a registered member.',
+                    icon: 'success',
+                    buttonsStyling: false,
+                    customClass: {
+                        confirmButton: 'btn btn-success btn-lg'
+                    }
+                });
                 this.closeModal();
             },
             (errorRes) => {

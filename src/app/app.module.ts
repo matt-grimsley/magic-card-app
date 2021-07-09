@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth/auth.service';
+import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { AuthService } from './auth/auth.service';
         SignupComponent,
         ArtViewComponent,
         LoadingSpinnerComponent,
-        FooterComponent
+        FooterComponent,
+        InventoryComponent
     ],
     imports: [
         BrowserModule,
