@@ -32,9 +32,51 @@
 </ul>
 </nav> -->
 <div class="header">
-    <nav class="navbar navbar-lg navbar-expand-sm mb-3">
+    <nav class="navbar navbar-expand-md mb-3">
         <a class="navbar-brand" routerLink="/home">Cardboard Collector</a>
         <button
+            class="navbar-toggler"
+            type="button"
+            (click)="collapsed = !collapsed"
+            *ngIf="user"
+        >
+            &#9776;
+        </button>
+        <div class="navbar-collapse" [class.collapse]="collapsed">
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item" ngbDropdown *ngIf="user">
+                    <a class="nav-link" ngbDropdownToggle role="button" *ngIf="user">
+                        Cards
+                    </a>
+
+                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
+                      <a ngbDropdownItem routerLink="/inventory">My Inventory</a>
+                      <a ngbDropdownItem routerLink="/art-view">Card Art Search</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ngbDropdown *ngIf="user">
+                    <!-- <a class="nav-link" ngbDropdownToggle role="button" *ngIf="user">
+                        My Profile (<span class="italic">{{ user.username }}</span>)
+                    </a> -->
+                    <a
+                        class="nav-link"
+                        ngbDropdownToggle
+                        role="button"
+                        *ngIf="user"
+                    >
+                        My Profile
+                    </a>
+                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                        <span ngbDropdownItem class="disabled" style="color: var(--dark-5)">{{ user.username }}</span>
+                        <div class="dropdown-divider"></div>
+                        <a ngbDropdownItem (click)="logout()">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- <button
             class="navbar-toggler"
             type="button"
             (click)="isMenuCollapsed = !isMenuCollapsed"
@@ -69,6 +111,6 @@
                     >
                 </li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 </div>

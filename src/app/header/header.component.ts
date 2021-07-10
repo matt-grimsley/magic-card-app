@@ -1,11 +1,8 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { DataService } from '../shared/data.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { User } from '../auth/user.model';
 
 @Component({
     selector: 'app-header',
@@ -15,20 +12,26 @@ import { User } from '../auth/user.model';
 export class HeaderComponent implements OnInit, OnDestroy {
     private currentUser = null;
     private userSub: Subscription;
-    isMenuCollapsed = true;
+    collapsed = true;
     searchValue: string;
-    constructor(private dataService: DataService, private authService: AuthService) {}
+    constructor(
+        private dataService: DataService,
+        private authService: AuthService,
+        private config: NgbDropdownConfig
+    ) {
+        config.autoClose = true;
+    }
 
     ngOnInit(): void {
         this.userSub = this.authService.userSubject.subscribe((user) => {
-            if(user){
-              this.currentUser = user;
+            if (user) {
+                this.currentUser = user;
             }
         });
     }
 
     public get user() {
-      return this.currentUser;
+        return this.currentUser;
     }
 
     onSearch(searchValue: string) {
@@ -40,7 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
 
     logout() {
-      this.authService.logout();
-      this.currentUser = null;
+        this.currentUser = null;
+        this.authService.logout();
     }
 }

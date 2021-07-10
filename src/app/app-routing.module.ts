@@ -6,6 +6,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,13 +20,10 @@ const appRoutes: Routes = [
             }
         ]
     },
-    {
-        path: 'home',
-        canActivate: [AuthGuard],
-        component: HomeComponent,
-        children: [{ path: 'inventory', component: InventoryComponent }]
-    },
-    { path: 'art-view', canActivate: [AuthGuard], component: ArtViewComponent }
+    { path: 'home', canActivate: [AuthGuard], component: HomeComponent },
+    { path: 'art-view', canActivate: [AuthGuard], component: ArtViewComponent },
+    { path: 'inventory', canActivate: [AuthGuard], component: InventoryComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
