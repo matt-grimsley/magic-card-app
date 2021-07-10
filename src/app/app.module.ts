@@ -18,6 +18,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth/auth.service';
 import { InventoryComponent } from './inventory/inventory.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { InventoryComponent } from './inventory/inventory.component';
         ArtViewComponent,
         LoadingSpinnerComponent,
         FooterComponent,
-        InventoryComponent
+        InventoryComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
