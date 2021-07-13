@@ -23,7 +23,22 @@
     --bg-color: #022b3a;
     --heading-color: #E1E5F2;
     --form-color: #979DAC;
-}
+
+    --light-greenish-blue: #55efc4;
+    --faded-poster:#81ecec;
+    --green-darner-tail:#74b9ff;
+    --city-lights:#dfe6e9;
+    --mint-leaf:#00b894;
+    --robins-egg-blue:#00cec9;
+    --electron-blue:#0984e3;
+    --soothing-breeze:#b2bec3;
+    --sour-lemon:#ffeaa7;
+    --bright-yarrow:#fdcb6e;
+    --orangeville:#e17055;
+    --chi-gong:#d63031;
+    --american-river:#636e72;
+    --dracula-orchid:#2d3436;
+  }
 
 /* global styling for sticky footer*/
 html,
