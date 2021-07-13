@@ -1,37 +1,19 @@
 /* .navbar {
-    background-color: #0D1B2A;
 }
 
 .navbar-brand {
-    color: #f6fff8;
 }
 
 .nav-link {
-  color: #f6fff8;
-} */
-
-.navbar {
-    background-color: var(--dark-1);
-}
-
-.navbar-brand {
-    color: var(--light-1);
-}
-
-.nav-link {
-    color: var(--light-1);
 }
 
 .navbar-toggler {
-    color: var(--light-1);
-}
+} */
 
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .dropdown-toggle {
-  background-color: var(--dark-1);
-  color: var(--light-3);
-  box-shadow: none;
+    box-shadow: none;
 }

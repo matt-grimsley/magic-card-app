@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth/auth.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CardComponent } from './cards/card/card.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         LoadingSpinnerComponent,
         FooterComponent,
         InventoryComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        CardComponent
     ],
     imports: [
         BrowserModule,

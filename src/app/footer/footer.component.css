@@ -1,13 +1,9 @@
 .footer {
-    background-color: var(--dark-1);
-    color: var(--light-3);
-
     letter-spacing: 1px;
-    
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }

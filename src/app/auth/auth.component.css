@@ -1,14 +1,8 @@
-/* .context-menu {cursor: context-menu;}
-.row {
-  color: #f6fff8
-} */
-
 .context-menu {
     cursor: context-menu;
 }
 
 .component-wrapper {
-    color: var(--light-1);
     display: flex;
     flex-flow: row wrap;
     flex-basis: 20%;
@@ -16,14 +10,11 @@
 }
 
 .form-group {
-  min-width: 50vw;
+    min-width: 50vw;
 }
 
-.navbar-link {
-    color: var(--light-4);
+/* .navbar-link {
 }
 
 .form-control {
-    color: var(--dark-1);
-    background-color: var(--light-1);
-}
+} */

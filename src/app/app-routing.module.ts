@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     { path: 'home', canActivate: [AuthGuard], component: HomeComponent },
     { path: 'art-view', canActivate: [AuthGuard], component: ArtViewComponent },
     { path: 'inventory', canActivate: [AuthGuard], component: InventoryComponent },
-    { path: '**', component: PageNotFoundComponent }
+    { path: '**', canActivate: [AuthGuard], component: PageNotFoundComponent }
 ];
 
 @NgModule({
