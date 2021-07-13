@@ -25,7 +25,7 @@ export class ArtViewComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.cardService.cardArtResult.subscribe((data) => {
+        this.dataService.cardArtResult.subscribe((data) => {
             this.isLoading = false;
             this.cardArt = data;
             this.cardName = this.cardArt[0].name;

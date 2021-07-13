@@ -12,7 +12,7 @@ export class CardDetailComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.card = new Card('', CardBack.imagePath);
+        this.card = new Card('', '', CardBack.imagePath);
     }
 
     // onSelected(){

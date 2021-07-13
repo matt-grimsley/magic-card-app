@@ -15,11 +15,7 @@ export class CardsComponent implements OnInit, OnDestroy {
     constructor(private cardService: CardService) {}
 
     ngOnInit(): void {
-        this.cardSelectedSub = this.cardService.cardSelected.subscribe((card: Card) => {
-            this.selectedCard = card;
-        });
-
-        this.selectedCard = new Card('', CardBack.imagePath)
+        
     }
 
     ngOnDestroy(): void {

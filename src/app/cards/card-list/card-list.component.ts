@@ -12,10 +12,9 @@ export class CardListComponent implements OnInit {
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
-    this.cards = this.cardService.getCards();
   }
 
-  onSelected(card: Card) {
-    this.cardService.cardSelected.emit(card);
-  }
+  // onSelected(card: Card) {
+  //   this.cardService.cardSelected.emit(card);
+  // }
 }

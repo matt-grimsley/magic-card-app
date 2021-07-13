@@ -34,9 +34,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         return this.currentUser;
     }
 
-    onSearch(searchValue: string) {
-        this.dataService.fuzzySearch(searchValue);
-    }
+    // onSearch(searchValue: string) {
+    //     this.dataService.fuzzySearch(searchValue);
+    // }
 
     ngOnDestroy() {
         this.userSub.unsubscribe();
