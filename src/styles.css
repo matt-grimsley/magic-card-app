@@ -1,15 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --dark-1: #0f3375;
-    --dark-2: #13459c;
-    --dark-3: #1557c0;
-    --dark-4: #196bde;
-    --dark-5: #2382f7;
-    --light-5: #4b9cf9;
-    --light-4: #77b6fb;
-    --light-3: #a4cefc;
-    --light-2: #cce4fd;
-    --light-1: #e8f3fe;
+    --gunmetal: #022b3a;
+    --metallic-seaweed: #1F7A8C;
+    --beau-blue: #BFDBF7;
+    --lavender-web: #E1E5F2;
+    --white: #FFFFFF;
+
+    --darkest-blue:#001233; /*slate*/
+    --darker-blue:#001845; /*oxford-blue*/
+    --dark-blue:#002855; /*dark-cornflower-blue*/
+    --light-blue:#023E7D; /*agate*/
+    --lighter-blue:#0353A4; /*prussian-blue*/
+    --lightest-blue: #0466C8; /*stratospheric-blue*/
+    --darker-grey:#33415C; /*independence*/
+    --dark-grey:#5C677D; /*black-coral*/
+    --light-grey:#7D8597; /*roman-silver*/
+    --lighter-grey:#979DAC; /*manatee*/
+
+    --primary-color: #BFDBF7;
+    --secondary-color: #1F7A8C;
+    --font-color: #FFFFFF;
+    --bg-color: #022b3a;
+    --heading-color: #E1E5F2;
+    --form-color: #979DAC;
 }
 
 /* global styling for sticky footer*/

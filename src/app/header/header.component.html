@@ -43,15 +43,15 @@
             &#9776;
         </button>
         <div class="navbar-collapse" [class.collapse]="collapsed">
-            <ul class="navbar-nav mr-auto" >
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item" ngbDropdown *ngIf="user">
                     <a class="nav-link" ngbDropdownToggle role="button" *ngIf="user">
                         Cards
                     </a>
 
                     <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-                      <a ngbDropdownItem routerLink="/inventory">My Inventory</a>
-                      <a ngbDropdownItem routerLink="/art-view">Card Art Search</a>
+                        <a ngbDropdownItem routerLink="/inventory">My Inventory</a>
+                        <a ngbDropdownItem routerLink="/art-view">Card Art Search</a>
                     </div>
                 </li>
             </ul>
@@ -60,16 +60,15 @@
                     <!-- <a class="nav-link" ngbDropdownToggle role="button" *ngIf="user">
                         My Profile (<span class="italic">{{ user.username }}</span>)
                     </a> -->
-                    <a
-                        class="nav-link"
-                        ngbDropdownToggle
-                        role="button"
-                        *ngIf="user"
-                    >
+                    <a class="nav-link" ngbDropdownToggle role="button" *ngIf="user">
                         My Profile
                     </a>
                     <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
-                        <span ngbDropdownItem class="disabled" style="color: var(--dark-5)">{{ user.username }}</span>
+                        <span
+                            ngbDropdownItem
+                            class="disabled"
+                            >{{ user.username }}</span
+                        >
                         <div class="dropdown-divider"></div>
                         <a ngbDropdownItem (click)="logout()">Log Out</a>
                     </div>

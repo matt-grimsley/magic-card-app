@@ -7,32 +7,25 @@
 
 .list-group-item {
     cursor: pointer;
-    color: var(--dark-1);
-    background-color: var(--light-1);
 }
 
 .carousel-img {
     max-width: 700px;
     height: auto;
-    
 }
 
-.form-control {
-    color: var(--dark-1);
-    background-color: var(--light-1);
+/* .form-control {
 }
 
 .input {
-    color: var(--light-1);
-}
+} */
 
 .container-fluid {
-    color: var(--light-1);
     display: flex;
     justify-content: space-around;
     min-width: 50vw;
 }
 ::placeholder {
-    color: var(--dark-1);
+    color: #000000;
     opacity: 1;
 }
